@@ -10,10 +10,10 @@ relative_permalinks: true
 
 # Setup
 title:               Thom Joy
-tagline:
-description:
+tagline:             The personal website of Thom Joy
+description:         A Software Engineer in Sydney
 baseurl:             /
-paginate:            5
+paginate:            3
 
 # About/contact
 author:
@@ -23,3 +23,6 @@ author:
 
 # Custom vars
 version:             1.0.0
+
+github:
+  repo:              github.com/thomjoy/thomjoy.github.io
