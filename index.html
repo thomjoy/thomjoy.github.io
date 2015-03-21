@@ -1,38 +1,59 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="utf-8">
+    <title>Thom Joy - Software Engineer in Sydney</title>
+    <meta name="author" content="Thom Joy">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+    <link rel="stylesheet" href="type.css" />
+    <link rel="stylesheet" href="links.css" />
+    <link rel="stylesheet" href="colors.css" />
+    <link rel="stylesheet" href="btns.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id="content">
+      <div class="bg-red"></div>
+      <div id="map"></div>
+      <div id="info">
+        <div id="heading"><span>></span><h1>Hello World</h1></div>
+        <p>I'm Thom Joy, a Software Engineer from Sydney</p>
+        <ul>
+          <li>
+            <a target="_blank" class="btn btn--s btn--light" href="http://github.com/thomjoy">
+             Github
+            </a>
+          </li>
+          <li>
+            <a target="_blank" class="btn btn--s btn--light" href="http://twitter.com/thomjoy">
+             @thomjoy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+    <script>
+      L.mapbox.accessToken = 'pk.eyJ1IjoidGhvbWpveTE5ODQiLCJhIjoiTGx2V3ZUVSJ9.pZlOrVUXu_aC1i0nTvpIpA';
+      var map = L.mapbox.map('map', 'thomjoy1984.lh2pbni0', {
+        tileLayer: true,
+        featureLayer: false,
+        legendControl: false,
+        infoControl: false,
+        attributionControl: false,
+        zoomControl: false
+      }).setView([-32.694, 145.897], 9);
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+      map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
-
+      if (map.tap) map.tap.disable();
+    </script>
+  </body>
+</html>
