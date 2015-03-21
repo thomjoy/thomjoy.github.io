@@ -12,7 +12,7 @@ relative_permalinks: true
 title:               Thom Joy
 tagline:             The personal website of Thom Joy
 description:         A Software Engineer in Sydney
-baseurl:             /blog/
+baseurl:             /
 paginate:            3
 
 # About/contact
