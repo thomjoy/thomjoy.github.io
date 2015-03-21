@@ -21,9 +21,9 @@
   color: #111;
   display: inline-block;
   font-family: 'PT Sans Narrow', helvetica, arial, sans-serif;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   margin-bottom: 0.5em;
-  padding: 1em 0.75em;
+  padding: 0.45em 0.75em;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: color 0.4s, background-color 0.4s, border 0.4s;
